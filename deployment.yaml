@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 24wh1a05k9-todo
+  labels:
+    app: 24wh1a05k9-todo
+    student: 24WH1A05K9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 24wh1a05k9-todo
+  template:
+    metadata:
+      labels:
+        app: 24wh1a05k9-todo
+        student: 24WH1A05K9
+    spec:
+      containers:
+        - name: 24wh1a05k9-todo-container
+          image: todo-app-24wh1a05k9:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
